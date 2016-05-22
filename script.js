@@ -25,3 +25,4 @@ $( document ).ready(function() {
 //and hide them.
 //3. style the checkboxes, then add answers.
 //4. style the answers and hide them.
+//
