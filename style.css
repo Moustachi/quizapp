@@ -52,7 +52,55 @@ span {
 }
 
 .questions p {
-	margin-left: 2rem;
+	text-align: center;
+	width: 12em;
+	margin: 0 auto;
+	padding-top: 1em;
+}
+
+.question1 {
+	padding-top: 1.5em;
+}
+
+.question1c {
+	margin-left: 1.7em;
+	padding-top: .25rem;
+}
+
+.question2 {
+	padding-top: .4em;
+}
+
+.question2c {
+	margin-left: 1.7em;
+	padding-top: .25rem;
+}
+
+.question3 {
+	padding-top: .8em;
+}
+
+.question3c {
+	margin-left: .40em;
+	padding-top: .25rem;
+}
+
+.question4 {
+	padding-top: .8em;
+}
+
+.question4c {
+	margin-left: 1.3em;
+	padding-top: .25rem;
+}
+
+.question5 {
+	padding-top: 1.5em;
+}
+
+.question5c {
+	margin-left: 3em;
+	padding-top: .25rem;
 }
 
 .choices{
@@ -60,6 +108,15 @@ span {
 	height: 7rem;
 	width: 16rem;
 	margin: 0 auto;
+}
+
+ul {
+	list-style: none;
+	margin-left: 0em;
+}
+
+input[type=checkbox] {
+	margin-right: .8em;
 }
 
 .submitbuttondiv {
@@ -81,4 +138,6 @@ h3 {
 	margin-top: 1.2rem;
 }
 
-ul {}
+input {
+
+}
