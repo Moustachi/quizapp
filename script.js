@@ -3,18 +3,33 @@ $( document ).ready(function() {
 
 //----------------------NEW GAME BUTTON-----------------------//
     $(".newgamediv").on("click", ".newgame", function() {
-    	//newQuestion is a local variable that adds a span that
-    	//contains questions object 0 ****THIS IS WHERE I STOPPED***
-    	//***CONTINUE BY ADDING THE CHOICES TO .choices*************
-    	var newQuestion = '<span class="question">'+questions[0].question+'</span>'
+    	var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span>'
+    	var newChoice ='<li>'+'<input type = "radio" name="option" class="option" value="0">'
+    		+" "+questions[currentQuestion].choices[0]+'</li>'+
+    		'<li>'+'<input type = "radio" name="option" class="option" value="0">'
+    		+" "+questions[currentQuestion].choices[1]+'</li>'+
+    		'<li>'+'<input type = "radio" name="option" class="option" value="0">'
+    		+" "+questions[currentQuestion].choices[2]+'</li>'+
+    		'<li>'+'<input type = "radio" name="option" class="option" value="0">'
+    		+" "+questions[currentQuestion].choices[3]+'</li>'
     	numberCorrect = 0; //set numberCorrect back to 0
     	currentQuestion = 0; //set currentQuestion back to 0
     	$(".scorefeedback").text("Score: 0/5"); //changes .scorefeeback string to "Score 0/5"
-    	$(".questionsdiv").html(newQuestion);
+    	$(".questionsdiv").html(newQuestion); //changes the contents of .questionsdiv to var newQuestion
+    	$(".choices").html(newChoice);
     });
 
+//----------------------SUBMIT BUTTON-----------------------//
+	$(".submitbuttondiv").on("click", ".submitbuttondiv", function() {
+		//evaluate the choice selected for correctness
+		//move on to the next question
+		//change question number
+		//change score number depending on evaluation results
+
+	});
+
 //-------------Stored the questions and choices--------------//
-//-------------in var question.------------------------------//
+//-------------in var questions.------------------------------//
     var questions = [{
     		question: "Which character created the Matrix?",
     		choices: ["Agent Smith", "The Oracle", "The Architect", "The Keymaker"],
