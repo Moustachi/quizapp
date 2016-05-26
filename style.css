@@ -26,17 +26,33 @@ header {
 	margin: 0 auto;
 }
 
+.questionsdiv {
+	border: 1px solid black;
+}
+
+.question {
+	margin: 0 auto;
+}
+
 .feedback {
 	background-color: pink;
 	height: 3rem;
 }
 
-span {
-	border: 1px solid black;
-	display: block;
-	text-align: center;
+.questionfeedback {
 	width: 8rem;
 	margin: 0 auto;
+	display: block;
+}
+
+.scorefeedback {
+	width: 8rem;
+	margin: 0 auto;
+	display: block;
+}
+span {
+	border: 1px solid black;
+	text-align: center;
 }
 
 .quizdiv {
@@ -97,4 +113,8 @@ h3 {
 	font-weight: lighter;
 	text-align: center;
 	margin-top: 1.2rem;
+}
+
+.currentCorrect {
+	width: 10px;
 }
