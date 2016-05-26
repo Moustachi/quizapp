@@ -62,11 +62,11 @@ $(document).ready(function() {
     }
 
     function generateChoices() {
-        for (var i = 0; i <= 4; i++) {
-            $(".choices").html(
-                '<li>' +
-                '<input type = "radio" name="option" class="option" value="0">' +
-                '<span>' + questions[currentQuestion].choices[i] + '</span>' +
+        for (var i = 0; i < 4; i++) {
+            $(".choices").append(
+                '<li>'+
+                '<input type = "radio" name="option" class="option" value="'+i+'">'+
+                '<span class= appendedChoices>'+questions[currentQuestion].choices[i]+'</span>'+
                 '</li>');
         }
     }
@@ -92,8 +92,10 @@ $(document).ready(function() {
         currentQuestion = 0; //set currentQuestion back to 0
         $(".currentCorrect").text("0");
         $(".questionfeedback").text("Question: 1/5");
-        var newQuestion = '<span class="question">' + questions[0].question + '</span>'
-        $(".questionsdiv").html(newQuestion); //changes the contents of .questionsdiv to var newQuestion
+        $(".question").remove();
+        $("li").remove();
+        var newQuestion = '<span class="question">'+questions[0].question+'</span>'
+        $(".questionsdiv").append(newQuestion); //changes the contents of .questionsdiv to var newQuestion
         generateChoices();
     }); //new game button closing tag
 

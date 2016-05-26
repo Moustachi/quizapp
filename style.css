@@ -27,6 +27,18 @@ header {
 	margin: 0 auto;
 }
 
+.questionfeedback {
+	display: block;
+}
+
+.scorefeedback {
+	display: block;
+}
+
+.appendedChoices {
+	display: inline-block;
+}
+
 .feedback {
 	background-color: pink;
 	height: 3rem;
@@ -34,7 +46,6 @@ header {
 
 span {
 	border: 1px solid black;
-	display: block;
 	text-align: center;
 	width: 8rem;
 	margin: 0 auto;
@@ -98,4 +109,12 @@ h3 {
 	font-weight: lighter;
 	text-align: center;
 	margin-top: 1.2rem;
+}
+
+.question {
+	padding-top: 1rem;
+	display: block;
+	margin: 0 auto;
+	width: 16em;
+	height: 4em;
 }
