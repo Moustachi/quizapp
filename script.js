@@ -1,10 +1,5 @@
 $( document ).ready(function() {
 
-
-
-
-
-
 //----------------------NEW GAME BUTTON-----------------------//
 $(".newgamediv").on("click", ".newgame", function() {
     numberCorrect = 0; //set numberCorrect back to 0
