@@ -1,6 +1,7 @@
 var numberCorrect = 0;
 var currentQuestion = 0;
-var questions = [{
+var questions = [
+{
         question: "Which character created the Matrix?",
         choices: ["Agent Smith", "The Oracle", "The Architect", "The Keymaker"],
         questionNum: 1,
@@ -38,11 +39,11 @@ $(document).ready(function() {
         } else {
             alert("Incorrect");
         };
-        currentQuestion++
+        currentQuestion++;
     };
 
     function nextQuestion() {
-        var newQuestion = '<span class="question">' + questions[currentQuestion].question + '</span>'
+        var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span>';
         $(".question").remove();
         $("li").remove();
         $(".questionsdiv").append(newQuestion);
@@ -59,18 +60,24 @@ $(document).ready(function() {
                 '</li>');
         }
     };
-    //----------------------NEW GAME BUTTON-----------------------//
-    $(".newgamediv").on("click", ".newgame", function() {
+
+    function refresh() {
         numberCorrect = 0;
         currentQuestion = 0;
+        var newQuestion = '<span class="question">'+
+                                questions[currentQuestion].question+
+                          '</span>'
         $(".scoreCount").text(0);
         $(".questionCount").text(questions[currentQuestion].questionNum);
         $(".question").remove();
         $("li").remove();
-        var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span>'
         $(".questionsdiv").append(newQuestion);
-        generateChoices();
         $(".submitbuttondiv").show();
+    };
+    //----------------------NEW GAME BUTTON-----------------------//
+    $(".newgamediv").on("click", ".newgame", function() {
+        refresh();
+        generateChoices();
     });
     //----------------------SUBMIT BUTTON-----------------------//
     $(".submitbuttondiv").on("click", ".submitButton", function() {
