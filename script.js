@@ -38,14 +38,16 @@ $(document).ready(function() {
         } else {
             alert("Incorrect");
         };
+        currentQuestion++
     };
 
     function nextQuestion() {
         var newQuestion = '<span class="question">' + questions[currentQuestion].question + '</span>'
         $(".question").remove();
         $("li").remove();
-        $(".questionsdiv").html(newQuestion);
+        $(".questionsdiv").append(newQuestion);
         $(".choices").append(generateChoices());
+        $(".questionCount").text(questions[currentQuestion].questionNum);
     };
 
     function generateChoices() {
@@ -57,29 +59,15 @@ $(document).ready(function() {
                 '</li>');
         }
     };
-
-    function incrementQuestion() {
-        if (currentQuestion == 0) {
-            $(".questionfeedback").text(currentQuestion.val())
-        } else if (currentQuestion == 1) {
-            $(".questionfeedback").text("Question: 2/5")
-        } else if (currentQuestion == 2) {
-            $(".questionfeedback").text("Question: 3/5")
-        } else if (currentQuestion == 3) {
-            $(".questionfeedback").text("Question: 4/5")
-        } else if (currentQuestion == 4) {
-            $(".questionfeedback").text("Question: 5/5")
-        }
-    };
     //----------------------NEW GAME BUTTON-----------------------//
     $(".newgamediv").on("click", ".newgame", function() {
         numberCorrect = 0;
         currentQuestion = 0;
         $(".scoreCount").text(0);
-        $(".questionCount").text(1);
+        $(".questionCount").text(questions[currentQuestion].questionNum);
         $(".question").remove();
         $("li").remove();
-        var newQuestion = '<span class="question">'+questions[0].question+'</span>'
+        var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span>'
         $(".questionsdiv").append(newQuestion);
         generateChoices();
         $(".submitbuttondiv").show();
@@ -87,8 +75,6 @@ $(document).ready(function() {
     //----------------------SUBMIT BUTTON-----------------------//
     $(".submitbuttondiv").on("click", ".submitButton", function() {
         evaluateChoice();
-        currentQuestion++;
         nextQuestion();
-        incrementQuestion();
     });
 }); //document ready closing tag
