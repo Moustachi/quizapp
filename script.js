@@ -1,13 +1,6 @@
-//---------------------Global Variables-----------------------//
 var numberCorrect = 0;
 var currentQuestion = 0;
-//---------------------Global Variables-----------------------//
-
-$(document).ready(function() {
-
-    //-------------Stored the questions and choices--------------//
-    //-------------in var questions.------------------------------//
-    var questions = [{
+var questions = [{
         question: "Which character created the Matrix?",
         choices: ["Agent Smith", "The Oracle", "The Architect", "The Keymaker"],
         questionNum: 1,
@@ -33,6 +26,8 @@ $(document).ready(function() {
         questionNum: 5,
         correct: 1,
     }]
+$(document).ready(function() {
+    $(".submitbuttondiv").hide();
 
     function evaluateChoice() {
         var answer = $("input[type='radio']:checked").val();
@@ -43,7 +38,7 @@ $(document).ready(function() {
         } else {
             alert("Incorrect");
         };
-    }
+    };
 
     function nextQuestion() {
         var newQuestion = '<span class="question">' + questions[currentQuestion].question + '</span>'
@@ -51,7 +46,7 @@ $(document).ready(function() {
         $("li").remove();
         $(".questionsdiv").html(newQuestion);
         $(".choices").append(generateChoices());
-    }
+    };
 
     function generateChoices() {
         for (var i = 0; i < 4; i++) {
@@ -61,8 +56,7 @@ $(document).ready(function() {
                 '<span class= appendedChoices>'+questions[currentQuestion].choices[i]+'</span>'+
                 '</li>');
         }
-    }
-
+    };
 
     function incrementQuestion() {
         if (currentQuestion == 0) {
@@ -76,31 +70,25 @@ $(document).ready(function() {
         } else if (currentQuestion == 4) {
             $(".questionfeedback").text("Question: 5/5")
         }
-    }
-
+    };
     //----------------------NEW GAME BUTTON-----------------------//
     $(".newgamediv").on("click", ".newgame", function() {
-        numberCorrect = 0; //set currentCorrect back to 0
-        currentQuestion = 0; //set currentQuestion back to 0
+        numberCorrect = 0;
+        currentQuestion = 0;
         $(".scoreCount").text(0);
         $(".questionCount").text(1);
         $(".question").remove();
         $("li").remove();
         var newQuestion = '<span class="question">'+questions[0].question+'</span>'
-        $(".questionsdiv").append(newQuestion); //changes the contents of .questionsdiv to var newQuestion
+        $(".questionsdiv").append(newQuestion);
         generateChoices();
-    }); //new game button closing tag
-
+        $(".submitbuttondiv").show();
+    });
     //----------------------SUBMIT BUTTON-----------------------//
     $(".submitbuttondiv").on("click", ".submitButton", function() {
-        //evaluate the choice selected for correctness
-        //change score number depending on evaluation results
         evaluateChoice();
-        //move on to the next question
         currentQuestion++;
         nextQuestion();
-        //change question number
         incrementQuestion();
-    }); //submit button
-
+    });
 }); //document ready closing tag
