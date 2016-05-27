@@ -74,8 +74,6 @@ $(document).ready(function() {
         $(".questionsdiv").append(newQuestion);
         $(".submitbuttondiv").show();
     };
-
-    };
     //----------------------NEW GAME BUTTON-----------------------//
     $(".newgamediv").on("click", ".newgame", function() {
         refresh();
