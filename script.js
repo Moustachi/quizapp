@@ -38,7 +38,7 @@ $(document).ready(function() {
         var answer = $("input[type='radio']:checked").val();
         if (answer == questions[currentQuestion].correct) {
             numberCorrect++;
-            $(".currentCorrect").text(numberCorrect);
+            $(".scoreCount").text(numberCorrect);
             alert("Correct");
         } else {
             alert("Incorrect");
@@ -90,8 +90,7 @@ $(document).ready(function() {
     $(".newgamediv").on("click", ".newgame", function() {
         numberCorrect = 0; //set currentCorrect back to 0
         currentQuestion = 0; //set currentQuestion back to 0
-        $(".currentCorrect").text("0");
-        $(".questionfeedback").text("Question: 1/5");
+        $(".scoreCount").text(0);
         $(".question").remove();
         $("li").remove();
         var newQuestion = '<span class="question">'+questions[0].question+'</span>'
