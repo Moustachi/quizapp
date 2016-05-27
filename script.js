@@ -47,18 +47,10 @@ $(document).ready(function() {
 
     function nextQuestion() {
         var newQuestion = '<span class="question">' + questions[currentQuestion].question + '</span>'
-        var newChoice = '<li>' + '<input type = "radio" name="option" class="option" value="0">' +
-            " " + questions[currentQuestion].choices[0] + '</li>' +
-            '<li>' + '<input type = "radio" name="option" class="option" value="1">' +
-            " " + questions[currentQuestion].choices[1] + '</li>' +
-            '<li>' + '<input type = "radio" name="option" class="option" value="2">' +
-            " " + questions[currentQuestion].choices[2] + '</li>' +
-            '<li>' + '<input type = "radio" name="option" class="option" value="3">' +
-            " " + questions[currentQuestion].choices[3] + '</li>'
         $(".question").remove();
         $("li").remove();
         $(".questionsdiv").html(newQuestion);
-        $(".choices").html(newChoice);
+        $(".choices").append(generateChoices());
     }
 
     function generateChoices() {
