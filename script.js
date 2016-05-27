@@ -10,27 +10,27 @@ $(document).ready(function() {
     var questions = [{
         question: "Which character created the Matrix?",
         choices: ["Agent Smith", "The Oracle", "The Architect", "The Keymaker"],
-        questionNum: 0,
+        questionNum: 1,
         correct: 2,
     }, {
         question: "When the machines run the planet, for what purpose do they use the humans?",
         choices: ["Manual Labor", "Energy", "Experiments", "Circus acts"],
-        questionNum: 1,
+        questionNum: 2,
         correct: 1,
     }, {
         question: "What proverb is written in Latin over the Oracle’s kitchen door?",
         choices: ["Wisdom is Silence", "Know Thyself", "All is Vanity", "Carpe Diem"],
-        questionNum: 2,
+        questionNum: 3,
         correct: 1,
     }, {
         question: "Who makes a deal with Agent Smith to sell out Morpheus in The Matrix?",
         choices: ["Agent Smith", "Mouse", "Tank", "Cypher"],
-        questionNum: 3,
+        questionNum: 4,
         correct: 3,
     }, {
         question: "About what year is it in the ravaged real world?",
         choices: ["1999", "2199", "2060", "5416"],
-        questionNum: 4,
+        questionNum: 5,
         correct: 1,
     }]
 
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
     function incrementQuestion() {
         if (currentQuestion == 0) {
-            $(".questionfeedback").text("Question: 1/5")
+            $(".questionfeedback").text(currentQuestion.val())
         } else if (currentQuestion == 1) {
             $(".questionfeedback").text("Question: 2/5")
         } else if (currentQuestion == 2) {
@@ -83,6 +83,7 @@ $(document).ready(function() {
         numberCorrect = 0; //set currentCorrect back to 0
         currentQuestion = 0; //set currentQuestion back to 0
         $(".scoreCount").text(0);
+        $(".questionCount").text(1);
         $(".question").remove();
         $("li").remove();
         var newQuestion = '<span class="question">'+questions[0].question+'</span>'
