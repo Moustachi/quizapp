@@ -1,7 +1,7 @@
 var numberCorrect = 0;
 var currentQuestion = 0;
 var questions = [
-{
+    {
         question: "Which character created the Matrix?",
         choices: ["Agent Smith", "The Oracle", "The Architect", "The Keymaker"],
         questionNum: 1,
@@ -74,13 +74,15 @@ $(document).ready(function() {
         $(".questionsdiv").append(newQuestion);
         $(".submitbuttondiv").show();
     };
+
+    };
     //----------------------NEW GAME BUTTON-----------------------//
     $(".newgamediv").on("click", ".newgame", function() {
         refresh();
         generateChoices();
     });
     //----------------------SUBMIT BUTTON-----------------------//
-    $(".submitbuttondiv").on("click", ".submitButton", function() {
+    $(".submitButton").on("click", function() {
         evaluateChoice();
         nextQuestion();
     });
