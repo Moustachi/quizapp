@@ -6,6 +6,7 @@ header {
 
 }
 
+
 .newgamediv {
 	margin: 0 auto;
 	text-align: center;
@@ -26,6 +27,18 @@ header {
 	margin: 0 auto;
 }
 
+.questionfeedback {
+	display: block;
+}
+
+.scorefeedback {
+	display: block;
+}
+
+.appendedChoices {
+	display: inline-block;
+}
+
 .feedback {
 	background-color: pink;
 	height: 3rem;
@@ -33,7 +46,6 @@ header {
 
 span {
 	border: 1px solid black;
-	display: block;
 	text-align: center;
 	width: 8rem;
 	margin: 0 auto;
@@ -58,61 +70,22 @@ span {
 	padding-top: 1em;
 }
 
-.question1 {
-	padding-top: 1.5em;
-}
-
-.question1c {
-	margin-left: 1.7em;
-	padding-top: .25rem;
-}
-
-.question2 {
-	padding-top: .4em;
-}
-
-.question2c {
-	margin-left: 1.7em;
-	padding-top: .25rem;
-}
-
-.question3 {
-	padding-top: .8em;
-}
-
-.question3c {
-	margin-left: .40em;
-	padding-top: .25rem;
-}
-
-.question4 {
-	padding-top: .8em;
-}
-
-.question4c {
-	margin-left: 1.3em;
-	padding-top: .25rem;
-}
-
-.question5 {
-	padding-top: 1.5em;
-}
-
-.question5c {
-	margin-left: 3em;
-	padding-top: .25rem;
-}
-
 .choices{
 	border: 1px solid black;
 	height: 7rem;
 	width: 16rem;
 	margin: 0 auto;
+	text-align: center;
+	padding-top: 1em;
 }
 
 ul {
 	list-style: none;
 	margin-left: 0em;
+}
+
+li {
+	list-style: none;
 }
 
 input[type=checkbox] {
@@ -138,6 +111,10 @@ h3 {
 	margin-top: 1.2rem;
 }
 
-input {
-
+.question {
+	padding-top: 1rem;
+	display: block;
+	margin: 0 auto;
+	width: 16em;
+	height: 4em;
 }
