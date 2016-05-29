@@ -41,7 +41,7 @@ $(document).ready(function() {
         };
         currentQuestion++;
     };
-
+    
     function nextQuestion() {
         var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span>';
         $(".question").remove();
