@@ -44,12 +44,18 @@ $(document).ready(function() {
     };
 
     function nextQuestion() {
-        var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span>';
-        $(".question").remove();
-        $("li").remove();
-        $(".questionsdiv").append(newQuestion);
-        $(".choices").append(generateChoices());
-        $(".questionCount").text(questions[currentQuestion].questionNum);
+        if(questions[currentQuestion]){
+            var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span>';
+            $(".question").remove();
+            $("li").remove();
+            $(".questionsdiv").append(newQuestion);
+            $(".choices").append(generateChoices());
+            $(".questionCount").text(questions[currentQuestion].questionNum);
+        }
+        else if(currentQuestion = 5){
+            alert("gameover");
+
+        };//end else if statement
     };
 
     function generateChoices() {
@@ -75,6 +81,7 @@ $(document).ready(function() {
         $(".questionsdiv").append(newQuestion);
         $(".submitbuttondiv").show();
     };
+
     //----------------------NEW GAME BUTTON-----------------------//
     $(".newgamediv").on("click", ".newgame", function() {
         refresh();
